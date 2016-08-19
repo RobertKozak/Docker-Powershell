@@ -6,10 +6,10 @@ A simple demonstration of getting Powershell into a Docker container. See Docker
 # Usage
 To run PowerShell:
 
-    docker run -it --rm RobertKozak/powershell
+    docker run -it --rm robertkozak/powershell
 
  
 As an alias:
     
-    alias posh='docker run -it --rm RobertKozak/powershell'
+    alias posh='docker run -it --rm robertkozak/powershell'
     posh get-command
