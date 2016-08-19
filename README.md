@@ -1,5 +1,5 @@
 # Docker PowerShell
-Microsoft's PowerShell on Ubuntu 16.04 running in a docker container.
+Microsoft's PowerShell on Ubuntu 16.04 (Xenial) running in a docker container.
 
 # Usage
 To run PowerShell:
