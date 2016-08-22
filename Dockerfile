@@ -3,7 +3,9 @@ MAINTAINER Robert Kozak "rkozak@nowcom.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY ./setup.sh .
-RUN /bin/bash -c "source ./setup.sh" && rm ./setup.sh
+COPY ./*.sh .
+RUN /bin/bash -c "source ./setup.sh" \
+    && /bin/bash -c "source ./cleanup.sh" \
+    && rm ./*.sh
 
 ENTRYPOINT ["powershell"]
