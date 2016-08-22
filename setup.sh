@@ -27,13 +27,14 @@ case "$OSTYPE" in
         case "$ID" in
             centos*)
                 if [[ -z $(command -v curl) ]]; then
-                    echo "curl not found, installing..."
+                    echo "curl not found, installing ..."
                     yum install -y curl
                 fi
                 version=rpm
                 ;;
             ubuntu)
-                apt-get update
+                apt-get update --quiet -y
+                apt-get upgrade --quiet -y
                 case "$VERSION_ID" in
                     14.04)
                         version=ubuntu1.14.04.1_amd64.deb
@@ -46,7 +47,7 @@ case "$OSTYPE" in
                         exit 2
                 esac
                 if [[ -z $(command -v curl) ]]; then
-                    echo "curl not found, installing..."
+                    echo "curl not found, installing ..."
                     apt-get install -y curl
                 fi
                 ;;
@@ -94,7 +95,7 @@ case "$OSTYPE" in
                         icupackage=libicu55
                         ;;
                 esac
-                echo "Installing $libicupackage, libunwind8, and $package..."
+                echo "Installing $libicupackage, libunwind8, and $package ..."
                 apt-get install -y libunwind8 $icupackage
                 dpkg -i "./$package"
                 ;;
@@ -104,28 +105,6 @@ case "$OSTYPE" in
     darwin*)
         echo "Installing $package ..."
         installer -pkg ./$package -target /
-        ;;
-esac
-
-# Clean up packages
-echo "Cleaning up packages"
-rm ./$package
-case "$OSTYPE" in
-    linux*)
-        source /etc/os-release
-        # Install dependencies
-        case "$ID" in
-            centos)
-                ;;
-            ubuntu)
-                apt-get clean --quiet
-                apt-get autoclean --quiet
-                rm -rf /var/lib/apt/lists/* /var/log/apt/* /var/log/dpkg.log
-                ;;
-            *)
-        esac
-        ;;
-    darwin*)
         ;;
 esac
 
