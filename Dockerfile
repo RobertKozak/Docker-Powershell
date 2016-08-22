@@ -1,7 +1,5 @@
 FROM ubuntu:xenial
-
 MAINTAINER Robert Kozak "rkozak@nowcom.com"
-
 
 ENV DEBIAN_FRONTEND noninteractive
 
