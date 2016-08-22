@@ -108,6 +108,9 @@ case "$OSTYPE" in
         ;;
 esac
 
+# Remove downloaded package
+rm ./$package
+
 powershell -noprofile -c '"Congratulations! PowerShell is installed at $PSHOME"'
 success=$?
 

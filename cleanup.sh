@@ -4,7 +4,6 @@
 
 # Clean up packages
 echo "Cleaning up packages"
-rm ./$package
 case "$OSTYPE" in
     linux*)
         source /etc/os-release
