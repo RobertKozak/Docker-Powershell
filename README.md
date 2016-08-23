@@ -1,6 +1,8 @@
 # Docker PowerShell
 Microsoft's PowerShell on Ubuntu 16.04 (Xenial) running in a docker container.
 
+[![](https://images.microbadger.com/badges/image/robertkozak/docker-powershell.svg)](https://microbadger.com/images/robertkozak/docker-powershell "Get your own image badge on microbadger.com")
+
 A simple demonstration of getting Powershell into a Docker container. 
 
 This is now using a bash script to build from the source (based off of https://github.com/PowerShell/PowerShell/blob/master/tools/download.sh)
