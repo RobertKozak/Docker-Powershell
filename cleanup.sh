@@ -12,6 +12,7 @@ case "$OSTYPE" in
             centos)
                 ;;
             ubuntu)
+                apt-get purge --quiet -y curl 
                 apt-get clean --quiet
                 apt-get autoclean --quiet
                 rm -rf /var/lib/apt/lists/* /var/log/apt/* /var/log/dpkg.log
