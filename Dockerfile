@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Robert Kozak "rkozak@nowcom.com"
+LABEL maintainer "Robert Kozak <rkozak@nowcom.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 
